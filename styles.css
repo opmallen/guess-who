@@ -45,3 +45,10 @@ img {
     background-color: white;
     border-radius: 100%;
 }
+
+.instructions {
+    border-style: solid;
+    border-color: white;
+    border-width: 4px;
+    padding: 20px;
+}
