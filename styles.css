@@ -9,3 +9,21 @@ body {
 span {
     color: black;
 }
+
+.header {
+    display:grid;
+    grid-template-columns: 160px 160px;
+    justify-content: center;
+    align-items: center;
+}
+
+img {
+    width: 100%;
+}
+
+.cards {
+    display:grid;
+    grid-template-columns: 20% 20% 20% 20% 20%;
+    column-gap: 20px;
+    row-gap: 20px;
+}
