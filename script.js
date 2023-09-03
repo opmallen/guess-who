@@ -66,22 +66,27 @@ let cards = [
     }
 ]
 
-let images = (document.querySelectorAll('img'))
-let spans = (document.querySelectorAll('span'))
+let mysteryImg = document.querySelector('.mysteryImg')
+let mysteryName = document.querySelector('.mysteryName')
+let cardsDiv = document.querySelector('.cards')
 
-function selectRandomCard () {
-    let r = Math.floor(Math.random()*20);
-    for (let i = 0; i < images.length; i++) {
-        if (images[i].classList.contains('mysteryImg')) {
-        images[i].src = cards[r].image
-        }
-    }
-    for (let s = 0; s < spans.length; s++) {
-        if (spans[s].classList.contains('mysteryName')) {
-        spans[s].innerHTML = cards[r].name
-        }
-    }
+function selectRandomCard() {
+    let r = Math.floor(Math.random()*cards.length);
+    mysteryImg.src = cards[r].image
+    mysteryName.innerHTML = cards[r].name
     return
 }
 
 selectRandomCard()
+
+function populateCards() {
+    for (let c = 0; c < cards.length; c++) {
+        cardsDiv.innerHTML += `<div class="card" onclick="toggleEliminated(this)">
+            <img src="${cards[c].image}" />
+            <span>${cards[c].name}</span>
+        </div>`
+    }
+    return
+}
+
+populateCards()
