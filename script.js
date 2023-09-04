@@ -80,10 +80,10 @@ function selectRandomCard() {
 selectRandomCard()
 
 function populateCards() {
-    for (let c = 0; c < cards.length; c++) {
+    for (let i = 0; i < cards.length; i++) {
         cardsDiv.innerHTML += `<div class="card" onclick="toggleEliminated(this)">
-            <img src="${cards[c].image}" />
-            <span>${cards[c].name}</span>
+            <img src="${cards[i].image}" />
+            <span>${cards[i].name}</span>
         </div>`
     }
     return
