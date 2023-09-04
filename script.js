@@ -66,27 +66,24 @@ let cards = [
     }
 ]
 
-let mysteryImg = document.querySelector('.mysteryImg')
-let mysteryName = document.querySelector('.mysteryName')
-let cardsDiv = document.querySelector('.cards')
-
 function selectRandomCard() {
+    let mysteryImg = document.querySelector('.mysteryImg')
+    let mysteryName = document.querySelector('.mysteryName')
     let r = Math.floor(Math.random()*cards.length);
     mysteryImg.src = cards[r].image
     mysteryName.innerHTML = cards[r].name
-    return
 }
 
 selectRandomCard()
 
 function populateCards() {
+    let cardsDiv = document.querySelector('.cards')
     for (let i = 0; i < cards.length; i++) {
         cardsDiv.innerHTML += `<div class="card" onclick="toggleEliminated(this)">
             <img src="${cards[i].image}" />
             <span>${cards[i].name}</span>
         </div>`
     }
-    return
 }
 
 populateCards()
